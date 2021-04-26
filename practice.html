@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Practice</title>
+
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://use.typekit.net/rsn8xyu.css">
+
+  <script type="text/javascript" src="js/fabric.min.js"></script>
+</head>
+<body>
+  <div class="navbar noselect">
+    <a href="index.html"><div class="nav"><p>Home</p></div></a>
+    <a href="basics.html"><div class="nav"><p>Basics of Fingerprints</p></div></a>
+    <a href="identification.html"><div class="nav"><p>Fingerprint Identification</p></div></a>
+    <div class="nav-active"><p>Practice</p></div>
+  </div>
+
+  <div class="content">
+    <h1 class="content-title">Practice</h1>
+    <p>Your mission in this practice is to evaluate a partial fingerprint which was left behind at the scene of a crime. You must then compare this fingerprint to six (6) standard fingerprints from suspects. Identify which suspect left the print at the crime scene. </p>
+    <p>You can move, resize, rotate the pictures below to compare. </p>
+    <p>After you've made your decision, check your answer at the bottom of the page. </p>
+
+    <div class="practice-tool">
+      <canvas id="c" width="900" height="1220"></canvas>
+    </div>
+
+    <div class="button noselect" onclick="alert('Suspect 5\'s fingerprint is matching the one found at the crime scene')"><p>Check Answer</p></div>
+    <div class="button noselect" onclick="window.location='index.html'"><p>Home</p></div>
+  </div>
+
+  <script type="text/javascript" src="js/practice.js"></script>
+</body>
+</html>
