@@ -143,6 +143,10 @@ a:link, a:visited, a:hover, a:active {
   bottom: 0;
 }
 
+.practice-tool {
+  margin: 48px 0;
+}
+
 .navbar {
   display: flex;
   position: sticky;
@@ -152,7 +156,7 @@ a:link, a:visited, a:hover, a:active {
   font-weight: 700;
   background-color: var(--main-link-color);
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   align-content: center;
   flex-wrap: nowrap;
   backdrop-filter: saturate(180%) blur(20px);
@@ -198,6 +202,12 @@ a:link, a:visited, a:hover, a:active {
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .img-large {
+    width: 100%;
+    height: auto;
+  }
+
 @media only screen and (max-width: 650px) {
   .index-content {
     position: absolute;
@@ -216,6 +226,15 @@ a:link, a:visited, a:hover, a:active {
 
   .button p {
     font-size: 16pt;
+  }
+
+  .img-medium {
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar p {
+    font-size: 10pt;
   }
 }
 
@@ -237,5 +256,9 @@ a:link, a:visited, a:hover, a:active {
 
   .button p {
     font-size: 14pt;
+  }
+
+  .navbar p {
+    font-size: 9pt;
   }
 }
