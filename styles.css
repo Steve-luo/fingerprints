@@ -3,7 +3,7 @@
   --main-text-color: #E5E1E6;
   --main-accent-color: #F8AD6D;
   --main-b-color: #9F5F54;
-  --main-hover-color: rgba(255, 255, 255, 0.15);
+  --main-link-color: rgba(229, 225, 230, 0.15);
 }
 
 body {
@@ -20,8 +20,18 @@ h1 {
   font-family: halyard-display, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 64pt;
   color: var(--main-accent-color);
+}
+
+h2 {
+  font-family: fira-sans, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: 1.5em 0 0.5em 0;
+}
+
+img {
+  margin: 12px 12px 0 12px;
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -39,7 +49,7 @@ a:link, a:visited, a:hover, a:active {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
-.content {
+.index-content {
   position: absolute;
   top: 50%;
   left: 50%; 
@@ -50,9 +60,23 @@ a:link, a:visited, a:hover, a:active {
   margin: 0;
 }
 
-.main-title {
+.content {
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+  padding: 48px;
+  margin: 0 auto;
+}
+
+.index-title {
+  font-size: 64pt;
   text-align: center;
   margin: 0 0 96px 0;
+}
+
+.content-title {
+  font-size: 48pt;
+  margin: 0 0 48px 0;
 }
 
 .button-container a {
@@ -63,31 +87,110 @@ a:link, a:visited, a:hover, a:active {
 .button {
   display: table;
   width: 100%;
-  max-width: 480px;
-  height: 120px;
-  border: 2px solid var(--main-text-color);
-  border-radius: 15px;
+  max-width: 360px;
+  height: 90px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
   margin: 48px auto;
-  transition: background-color 0.2s;
+  background-color: var(--main-link-color);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  transition: border-color 0.2s linear;
   cursor: pointer;
 }
 
 .button p {
   display: table-cell;
   font-weight: 700;
-  font-size: 24pt;
+  font-size: 18pt;
   text-align: center;
   vertical-align: middle;
   padding: 0;
 }
 
 .button:hover {
-  background-color: var(--main-hover-color);
-  transition: background-color 0.2s;
+  border-bottom: 2px solid var(--main-text-color);
+}
+
+.indent-1 {
+  padding-left: 2em;
+}
+
+.image-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+
+.image-text {
+  display: inline-block;
+  position: relative;
+}
+
+.image-text p {
+  text-align: center;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+.overlay {
+  position: absolute;
+}
+
+#papillae-line {
+  left: 34%;
+  bottom: 0;
+}
+
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-weight: 700;
+  background-color: var(--main-link-color);
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  z-index: 1000;
+}
+
+.navbar p {
+  font-size: 14pt;
+  text-align: center;
+  padding: 15px 0;
+  margin: 0;
+}
+
+.navbar a {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+}
+
+.nav {
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  width: calc(100vw/4);
+  height: 100%;
+  transition: border-color 0.2s linear;
+}
+
+.nav:hover {
+  border-bottom: 2px solid var(--main-text-color);
+}
+
+.nav-active {
+  border-bottom: 2px solid var(--main-text-color);
+  width: calc(100vw/4);
 }
 
 @media only screen and (max-height: 650px) {
-  .content {
+  .index-content {
     position: static;
     top: 0;
     left: 0; 
@@ -96,36 +199,15 @@ a:link, a:visited, a:hover, a:active {
 }
 
 @media only screen and (max-width: 650px) {
-  h1 {
+  .index-content {
+    position: absolute;
+    top: 50%;
+    left: 0; 
+    transform: translate(0, -50%);
+  }
+
+  .index-title {
     font-size: 48pt;
-  }
-
-  .content {
-    position: absolute;
-    top: 50%;
-    left: 0; 
-    transform: translate(0, -50%);
-  }
-
-  .button {
-    height: 90px;
-  }
-
-  .button p {
-    font-size: 18pt;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  h1 {
-    font-size: 32pt;
-  }
-
-  .content {
-    position: absolute;
-    top: 50%;
-    left: 0; 
-    transform: translate(0, -50%);
   }
 
   .button {
@@ -134,5 +216,26 @@ a:link, a:visited, a:hover, a:active {
 
   .button p {
     font-size: 16pt;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .index-content {
+    position: absolute;
+    top: 50%;
+    left: 0; 
+    transform: translate(0, -50%);
+  }
+
+  .index-title {
+    font-size: 32pt;
+  }
+
+  .button {
+    height: 60px;
+  }
+
+  .button p {
+    font-size: 14pt;
   }
 }
